@@ -1,0 +1,221 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Test work Laravel10",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/login": {
+            "post": {
+                "summary": "Authenticate user and generate token",
+                "operationId": "09c1cdfe33bfbe0710861ac50c0adaec",
+                "parameters": [
+                    {
+                        "name": "email",
+                        "in": "query",
+                        "description": "User's email",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "password",
+                        "in": "query",
+                        "description": "User's password",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Login successful"
+                    },
+                    "401": {
+                        "description": "Invalid credentials"
+                    }
+                }
+            }
+        },
+        "/api/register": {
+            "post": {
+                "summary": "Register page",
+                "operationId": "08895790736612da345bc0606cefe61b",
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "description": "User's name",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "email",
+                        "in": "query",
+                        "description": "User's email",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "password",
+                        "in": "query",
+                        "description": "User's password",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "password_confirmation",
+                        "in": "query",
+                        "description": "User's confirm password",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "User registered successfully"
+                    },
+                    "401": {
+                        "description": "Validation errors"
+                    }
+                }
+            }
+        },
+        "/api/logout": {
+            "get": {
+                "summary": "Log out from cabinet",
+                "operationId": "997a6a8207848bc7720a393b92cb3494",
+                "responses": {
+                    "200": {
+                        "description": "Successful"
+                    }
+                }
+            }
+        },
+        "/api/football": {
+            "get": {
+                "summary": "Get info match for football",
+                "responses": {
+                    "200": {
+                        "description": "Successful"
+                    },
+                    "401": {
+                        "description": "Invalid credentials"
+                    }
+                }
+            }
+        },
+        "/api/posts": {
+            "get": {
+                "summary": " Display a listing of the resource.",
+                "operationId": "e9eaf7df702a94f4443677bd1a36cfe6",
+                "responses": {
+                    "200": {
+                        "description": "\\Illuminate\\Http\\Response"
+                    }
+                }
+            },
+            "post": {
+                "summary": "Store a newly created resource in storage.",
+                "operationId": "4a657e51a0066c64781851f2fd2651e2",
+                "parameters": [
+                    {
+                        "name": "",
+                        "in": "query",
+                        "description": "Illuminate\\Http\\Request $request",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "\\Illuminate\\Http\\Response"
+                    }
+                }
+            }
+        },
+        "/api/post/{$id}": {
+            "get": {
+                "summary": "Display the specified resource.",
+                "operationId": "d2a05f7eeab71f265f16595cd7bc7bcb",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "Illuminate\\Http\\Request $request",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "\\Illuminate\\Http\\Response"
+                    }
+                }
+            },
+            "put": {
+                "summary": " Update the specified resource in storage.",
+                "operationId": "c2ff8a6f88390bab4ae036d39a0a3cfb",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "Post $post",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "\\Illuminate\\Http\\Response"
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Remove the specified resource from storage.",
+                "operationId": "88136f3b8700b4d2706c3a85c43e5f57",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "Post $post",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "\\Illuminate\\Http\\Response"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "securitySchemes": {
+            "bearerAuth": {
+                "type": "http",
+                "bearerFormat": "bearer",
+                "scheme": "bearer"
+            }
+        }
+    }
+}
